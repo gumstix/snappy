@@ -1,0 +1,5 @@
+u-boot/
+linux/
+device/assets/dtb*
+device/assets/vmlinuz*
+device/system

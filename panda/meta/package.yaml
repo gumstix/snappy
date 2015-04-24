@@ -1,0 +1,35 @@
+name: panda
+vendor: Gumstix, Inc. <ash@gumstix.com>
+icon: meta/panda.png
+version: 0.1
+type: oem
+
+config:
+  ubuntu-core:
+    hostname: panda
+    services:
+        - name: ssh
+          enabled: true
+
+oem:
+  branding:
+    name: PandaBoard
+    logo: meta/panda.png
+  software:
+    preinstalled:
+        - webdm
+  hardware:
+    platform: panda
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: uEnv.txt
+        - path: MLO
+        - path: u-boot.img
+      raw-files:
+        - path: MLO
+          offset: 131072 # @ 128kB
+        - path: u-boot.img
+          offset: 3293216 # @ 384kB

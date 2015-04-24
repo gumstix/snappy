@@ -1,0 +1,30 @@
+name: overo
+vendor: Gumstix, Inc. <ash@gumstix.com>
+icon: meta/gumstix.png
+version: 0.1
+type: oem
+
+config:
+  ubuntu-core:
+    hostname: overo
+    services:
+        - name: ssh
+          enabled: true
+
+oem:
+  branding:
+    name: Gumstix Overo COM
+    logo: meta/gumstix.png
+  software:
+    preinstalled:
+        - webdm
+  hardware:
+    platform: overo
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: uEnv.txt
+        - path: MLO
+        - path: u-boot.img

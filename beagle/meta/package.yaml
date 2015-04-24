@@ -1,0 +1,30 @@
+name: beagle
+vendor: Gumstix, Inc. <ash@gumstix.com>
+icon: meta/beagle.png
+version: 0.1
+type: oem
+
+config:
+  ubuntu-core:
+    hostname: beagle
+    services:
+        - name: ssh
+          enabled: true
+
+oem:
+  branding:
+    name: BeagleBoard
+    logo: meta/beagle.png
+  software:
+    preinstalled:
+        - webdm
+  hardware:
+    platform: beagle
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: uEnv.txt
+        - path: MLO
+        - path: u-boot.img

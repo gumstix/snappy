@@ -1,0 +1,6 @@
+# where to load initrd
+initrd_addr=0x88080000
+mmcpart=1
+mmcrootfstype=ext4 rootwait
+# load Snappy environment and call into Snappy boot after processing this file
+uenvcmd=load mmc 0 ${loadaddr} snappy-system.txt; env import -t $loadaddr $filesize; set fdtfile omap3-${boardname}-${expansionname}.dtb; run snappy_boot

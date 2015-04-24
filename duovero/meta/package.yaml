@@ -1,0 +1,33 @@
+name: duovero
+vendor: Gumstix, Inc. <ash@gumstix.com>
+icon: meta/gumstix.png
+version: 0.1
+type: oem
+
+config:
+  ubuntu-core:
+    hostname: duovero
+    services:
+        - name: ssh
+          enabled: true
+
+oem:
+  branding:
+    name: Gumstix DuoVero COM
+    logo: meta/gumstix.png
+  software:
+    preinstalled:
+        - webdm
+  hardware:
+    platform: duovero
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: uEnv.txt
+      raw-files:
+        - path: MLO
+          offset: 131072 # @ 128kB
+        - path: u-boot.img
+          offset: 393216 # @ 384kB
