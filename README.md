@@ -72,8 +72,7 @@ To support Snappy's rollback system, it has two OS partitions, *system-a* and
 unsigned packages.
 
     $ sudo ubuntu-device-flash core 15.04 -o <machine>.img --size 4 \
-                                    --oem <machine>.snap --enable-ssh \
-                                    --developer-mode
+                                    --oem <machine>.snap --developer-mode
 
 Format a microSD as described [above](#prebuilt-images) with the newly
 created *img* file.  Once the card is created, take a look at the partition
