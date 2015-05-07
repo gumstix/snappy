@@ -216,8 +216,6 @@ A few known issues:
  * Building the Snappy OEM package yields errors such as
    "(MANUAL REVIEW) type 'oem' not allowed".  This is expected for OEM packages.
    The package will still be generated.
- * BeagleBoard seems to get stuck booting the kernel (at least, on a Beagle-XM
-   rev C.)
 
 Currently, this is a *yay-it-boots* kinda thing; there is no customization of
 the filesystem, validation that all the hardware works, or any kernel config

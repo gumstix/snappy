@@ -1,5 +1,7 @@
 # where to load initrd
+loadaddr=0x82000000
 initrd_addr=0x88080000
+fdtaddr=0x88000000
 mmcpart=1
 mmcrootfstype=ext4 rootwait
 
