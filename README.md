@@ -51,7 +51,7 @@ Assemble Your Own Image
     $ sudo apt-get install -y git build-essential make gcc-arm-linux-gnueabihf \
                               ubuntu-device-flash snappy-tools
 
-**2. Download an OEM Snappy package.**
+**2. (optional) Download an OEM Snappy package.**
 
 This package includes any components such as a bootloader that are specific to
 a particular device (i.e. [Overo][overo-snap], [DuoVero][duovero-snap], [Pepper]
@@ -62,6 +62,16 @@ a particular device (i.e. [Overo][overo-snap], [DuoVero][duovero-snap], [Pepper]
 As well as device-specific components, a system vendor could distribute a logo
 or pre-install other useful packages into any generated images. To make your own
 OEM package, see [below](#building-from-scratch).
+
+------------------------------------------------------------------------------
+**Note:**
+
+As these OEM snaps are now available through the Snappy App Store, this step
+is optional.  Just replace *machine-name*.snap with *machine-name*.gumstix in
+the *--oem* argument below and the OEM snap will be automatically fetched from
+the store.
+
+------------------------------------------------------------------------------
 
 **3. Assembly a flashable image.**
 
@@ -96,7 +106,7 @@ an older version.  Grab the latest from the PPA:
 
     $ sudo add-apt-repository ppa:snappy-dev/beta
     $ sudo apt-get update
-    $ sudo apt-get install ubuntu-device-flash
+    $ sudo apt-get install ubuntu-device-flash snappy-tools
 
 ------------------------------------------------------------------------------
 
