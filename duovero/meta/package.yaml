@@ -26,6 +26,8 @@ oem:
     boot-assets:
       files:
         - path: uEnv.txt
+        - path: MLO
+        - path: u-boot.img
       raw-files:
         - path: MLO
           offset: 131072 # @ 128kB

@@ -32,4 +32,4 @@ oem:
         - path: MLO
           offset: 131072 # @ 128kB
         - path: u-boot.img
-          offset: 3293216 # @ 384kB
+          offset: 393216 # @ 384kB
