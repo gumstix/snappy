@@ -13,7 +13,9 @@ Prebuilt images are available for [Overo][overo-img], [DuoVero][duovero-img],
 [Pepper][pepper-img], [Beagle][beagle-img], and [Panda][panda-img]. These
 images can be directly copied to a 4GB or greater microSD card.  Warning: this
 erases anything currently on the microSD card!  Note that any mounted
-partititions of the SD card should be unmounted before writing the image.
+partititions of the SD card should be unmounted before writing the image. These
+steps each take several minutes; your computer isn't hanging, the files are
+just large.
 
     # substitute one of 'overo', 'duovero', 'pepper', 'beagle' or 'panda' in
     # place of <machine>
@@ -22,6 +24,7 @@ partititions of the SD card should be unmounted before writing the image.
 
     # substitute the path to the drive e.g. /dev/sdd or /dev/mmcblk0 (not the
     # path of a partition e.g. /dev/sdd1 or /dev/mmcblk0p1) in place of <drive>
+    # use 'udevadm monitor' when you insert the card to determine the path
     $ sudo dd if=<machine>.img bs=4k of=<drive>
     $ sync
 
@@ -38,11 +41,21 @@ enjoy random XKCD comics delivered to your browser by your Snappy system:
 On your development machine (on the same network as your snappy device),
 navigate to http://*machine-name*.local
 
+An autobuilder generates weekly images for [Overo][overo-auto],
+[DuoVero][duovero-auto], [Pepper][pepper-auto], [Beagle][beagle-auto], and
+[Panda][panda-auto] from the latest code. This is a good place to look to try
+out the latest features or access a particular older version.
+
 [overo-img]: http://gumstix-snappy.s3.amazonaws.com/overo.img.xz
 [duovero-img]: http://gumstix-snappy.s3.amazonaws.com/duovero.img.xz
 [pepper-img]: http://gumstix-snappy.s3.amazonaws.com/pepper.img.xz
 [beagle-img]: http://gumstix-snappy.s3.amazonaws.com/beagle.img.xz
 [panda-img]: http://gumstix-snappy.s3.amazonaws.com/panda.img.xz
+[overo-auto]: https://catalina.gumstix.com/binaries/?sort=-last_updated&search=snappy-overo-master
+[duovero-auto]: https://catalina.gumstix.com/binaries/?sort=-last_updated&search=snappy-duovero-master
+[pepper-auto]: https://catalina.gumstix.com/binaries/?sort=-last_updated&search=snappy-pepper-master
+[beagle-auto]: https://catalina.gumstix.com/binaries/?sort=-last_updated&search=snappy-beagle-master
+[panda-auto]: https://catalina.gumstix.com/binaries/?sort=-last_updated&search=snappy-panda-master
 
 Assemble Your Own Image
 -----------------------
